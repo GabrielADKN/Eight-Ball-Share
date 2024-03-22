@@ -33,14 +33,25 @@ function EightBall() {
         setColor(answers[index].color)
     }
 
+    const reset = () => {
+        setMsg("Think of a Question")
+        setColor("black")
+    }
+
     return (
-        <div
-            className="EightBall"
-            style={{ backgroundColor: color, borderRadius: '50%', width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: '20px', cursor: 'pointer' }}
-            onClick={randomAnswer}
-        >
-            {msg}
-        </div>
+        <>
+            <div
+                className="EightBall"
+                style={{ backgroundColor: color, borderRadius: '50%', width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: '20px', cursor: 'pointer' }}
+                onClick={randomAnswer}
+            >
+                {msg}
+            </div>
+            <div 
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px' }}>
+                <button onClick={reset}>Reset</button>
+            </div>
+        </>
     )
 }
 
